@@ -18,7 +18,6 @@ export default function List(props) {
       $list.className = 'todo-item'
       $remove.className = 'remove'
       $check.className = 'check-mark'
-  
       $remove.append('x')
       props.todo.completed ?
         $lable.className = 'todo-text checked' :

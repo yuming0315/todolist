@@ -32,7 +32,9 @@ export default function InputBox(props) {
     }
   
     const onClickAddButton = () => {
-  
+      props.onCAddData(state.value)
+      state.value=""
+      $input.value =""
     }
   
     const bindEvent = () => {

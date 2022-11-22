@@ -12,6 +12,7 @@ export default function App($target) {
 
   let state = {
     inputValue: "",
+    id:11,
     todoList: []
   }
 
@@ -32,6 +33,9 @@ export default function App($target) {
     state = { ...state, todoList }
     render()
   }
+  const handleAddData = (data) => {
+    setTodoList([...state.todoList,{id:state.id++,title:data,completed:false}])
+  }
 
   const render = () => {
 
@@ -39,7 +43,7 @@ export default function App($target) {
     $main = document.createElement("div")
 
     $title = new Title()
-    $inputBox = new InputBox()
+    $inputBox = new InputBox({onCAddData: handleAddData})
     $ListBox = new ListBox({
       todoList: state.todoList,
       onClickRemove: handleClickRemove,
