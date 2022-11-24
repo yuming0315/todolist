@@ -13,17 +13,18 @@ export default function List(props) {
   
   
       $remove.addEventListener('click', onClickRemove)
-      $check.addEventListener('click',onClickChange)
+      $lable.addEventListener('click',onClickChange)
   
       $list.className = 'todo-item'
       $remove.className = 'remove'
       $check.className = 'check-mark'
       $remove.append('x')
+
       props.todo.completed ?
         $lable.className = 'todo-text checked' :
         $lable.className = 'todo-text'
       $lable.append(props.todo.title)
-      $check.append(props.todo.completed ? '✓' : 'X')
+      $check.append(props.todo.completed ? '✓' : ' ')
       //props.todo.completed && $check.append('✓')
       $list.append($remove, $lable, $check)
   
